@@ -1,0 +1,18 @@
+/* pages/map/map.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.map {
+  scale: 1;
+  /* width: 170%;
+  height: 120%; */
+  display: block;
+}
+
+.container1 {
+  width: 100%;
+  height: 100%;
+}

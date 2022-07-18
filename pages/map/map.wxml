@@ -1,0 +1,7 @@
+<!--pages/map/map.wxml-->
+<scroll-view class="container1" scroll-x scroll-y show-scrollbar="false" bindtouchstart='touchStartHandle'>
+  <view class="container1">
+    <!-- <image mode='scaleToFill' class="map" src="../../resorces/pictures/map1.jpeg" /> -->
+    <image mode='scaleToFill' src='../../resorces/images/map1.jpeg' bindtouchstart='touchStartHandle' bindtouchmove='touchMoveHandle' bindload='load' style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px"></image>
+  </view>
+</scroll-view>
