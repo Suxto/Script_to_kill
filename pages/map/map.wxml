@@ -1,22 +1,24 @@
 <!--pages/map/map.wxml-->
-<button style="float: none;position: absolute; top:30px; left:200px;z-index: 1;display: {{staus}};" bindtap="openList">
+
+<button style="position: fixed; top:30px; left:20px;z-index: 1;display: {{staus}};" bindtap="openList">
   任务列表</button>
+
 <image src="../../resorces/images/mb.png" style="width: {{wid}}rpx;" class="listBackground" />
 <scroll-view style="width: {{wid}}rpx;" class="sidenav" scroll-y>
   <image src="../../resorces/images/X.png" class="xButton" bindtap="closeList" />
   <rich-text nodes="<h2>任务列表</h2>" class="listText" style="text-align: center;"></rich-text>
 
   <view class="listText" wx:for="{{list}}" wx:key="index">
-    <view data-index="{{index}}" style="display: {{item.status}}" bindlongtap="removeMission">
+    <view data-index="{{index}}" style="display: {{item.status}}" capture-bind:longpress="removeMission">
       {{item.text}}
     </view>
   </view>
-  <view class="listText" style="padding-top:400rpx;text-align: center;" wx:if="{{missionShown==0}}">
-    任务列表为空
-  </view>
+
+  <view class="listText" wx:if="{{missionShown==0}}" style=" padding-top:400rpx;text-align:center;">任务列表为空</view>
+
 </scroll-view>
 
-<scroll-view class="container1" scroll-x scroll-y show-scrollbar="false" bindtouchstart='touchStartHandle'>
+<scroll-view class=" container1" scroll-x scroll-y show-scrollbar="false">
   <view>
     <image class="map" mode="aspectFill" src="../../resorces/images/map1.jpeg"></image>
   </view>

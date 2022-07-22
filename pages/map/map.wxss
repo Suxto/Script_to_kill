@@ -59,6 +59,7 @@ page {
 
 .listText {
   margin-left: 20rpx;
+  margin-right: 10rpx;
   color: rgb(24, 24, 24);
   font-size: xx-large;
   line-height: 120rpx;
