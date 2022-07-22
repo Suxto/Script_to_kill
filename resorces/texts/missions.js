@@ -23,12 +23,17 @@ var missi = [{
 var pla = [
   {
     id: 1, status: false,
-    x: "210px", y: "540px"
+    x: "458rpx", y: "1000rpx",
+    placeName: "御苑门",
+    text: "御苑门是1道门\n御苑门是2道门\n御苑门是2道门\n御苑门是4道门\n御苑门是5道门\n御苑门是6道门\n御苑门是7道门\n御苑门是8道门\n御苑门是6道门",
+    passwd: 1234
   }, {
-    id: 2, status: true,
-    x: "150px", y: "410px"
+    id: 2, status: false,
+    x: "350rpx", y: "760rpx",
+    placeName: "游乐园",
+    text: "游乐园ababab",
+    passwd: 1234
   }
-
 ];
 
 module.exports = {

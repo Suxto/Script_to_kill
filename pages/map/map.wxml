@@ -1,7 +1,6 @@
 <!--pages/map/map.wxml-->
-
+<!-- 任务列表 -->
 <image class="xButton" style="position: fixed; left:20px;z-index: 3;" src="../../resorces/images/list.png" bindtap="openList" />
-
 <image src="../../resorces/images/mb.png" style="width: {{wid}}rpx;" class="listBackground" />
 <scroll-view style="width: {{wid}}rpx;" class="sidenav" scroll-y>
   <image src="../../resorces/images/X.png" class="xButton" bindtap="closeList" />
@@ -16,13 +15,14 @@
   <view class="listText" wx:if="{{missionShown==0}}" style=" padding-top:400rpx;text-align:center;">任务列表为空</view>
 
 </scroll-view>
+<!-- 地图&标记 -->
+<scroll-view class=" container1" scroll-x scroll-y bounces="false">
 
-<scroll-view class=" container1" scroll-x scroll-y show-scrollbar="false">
   <image class="map" mode="aspectFill" src="../../resorces/images/map1.jpeg"></image>
 
   <view wx:for="{{places}}" wx:key="index">
 
-    <view data-index="{{index}}" class="markers" capture-bind:longpress="removeMission">
+    <view data-index="{{index}}" class="markers" bindtap="{{item.status?'':'pop'}}">
       <image src="{{item.status?'../../resorces/images/done.png':'../../resorces/images/notdone.png'}}" class="markers" style="left:{{item.x}};top:{{item.y}}" />
     </view>
 
@@ -30,17 +30,57 @@
 
 </scroll-view>
 
+<!-- 地点弹窗 -->
+<view class="quizWindow" wx:if="{{pop!=-1}}">
+  <image src="../../resorces/images/X.png" class="xButton" bindtap="closePop" style="top:95rpx;left:-66rpx;" />
+  <image src="../../resorces/images/quizBack.jpg" class="quizBack" />
+  <!-- 弹窗内容 -->
+  <rich-text class="quizTitle" nodes="<h1>{{places[pop].placeName}}</h1><br>"></rich-text>
+
+  <scroll-view class="quizContent" scroll-y scroll-into-view="{{scrollPos}}">
+    <text id="tx">{{places[pop].text}}</text>
+    <view>在下面的框中输入密码:</view>
+    <!-- 输入密码解锁地点 -->
+    <view class="code">
+      <view class="input-content-wrap">
+        <view catchtap="set_Focus" class="input-code-wrap">
+          <view class="{{code_isFocus&&length==0?'input':'input_none'}}">
+            <text>{{code[0]}}</text>
+          </view>
+          <view class="{{length==2?'input':'input_none'}}">
+            <text>{{code[1]}}</text>
+          </view>
+          <view class="{{length==3?'input':'input_none'}}">
+            <text>{{code[2]}}</text>
+          </view>
+          <view class="{{length==4?'input':'input_none'}}">
+            <text>{{code[3]}}</text>
+          </view>
+        </view>
+      </view>
+      <input bindinput="get_code" class="input-content" type="number" focus="{{code_isFocus}}" bindfocus="focu" maxlength="4" />
+    </view>
+    <view id="kb" style="height: {{keyboardHeight}}px;"></view>
+  </scroll-view>
+
+</view>
+
+<!-- 帮助图标&弹窗 -->
 <image src="../../resorces/images/quiz.png" class="quiz" bindtap="openQuiz" />
+
 <view class="quizWindow" wx:if="{{quiz}}">
   <image src="../../resorces/images/X.png" class="xButton" bindtap="closeQuiz" style="top:95rpx;left:-66rpx;" />
   <image src="../../resorces/images/quizBack.jpg" class="quizBack" />
   <rich-text class="quizTitle" nodes="<h1>帮助</h1><br>"></rich-text>
   <view class="quizContent">
-    <image src="../../resorces/images/list.png" class="xButton" style="float: left;top: -40rpx" />
-    <view>: 点击以展开任务列表，完成任务后长按以解锁下一个地点。</view>
-    <image src="../../resorces/images/notdone.png" class="markers" style="top: 5px;margin-right:20rpx ;" />
-    <view> : 没有解锁的地点 </view>
-    <image src="../../resorces/images/done.png" class="markers" style="top: 5px;margin-right:20rpx ;" />
+    <rich-text nodes="<br>" />
+    <image src="../../resorces/images/list.png" style="width: 55rpx;height: 55rpx;position: relative;float: left;top: 20rpx;padding-right: 20rpx" />
+    <view>: 点击以展开任务列表，完成任务后长按清除已完成的任务。</view>
+    <rich-text nodes="<br>" />
+    <image src="../../resorces/images/notdone.png" class="markers" style="top: 8px;margin-right:20rpx ;" />
+    <view> : 没有解锁的地点，点击以得到指示 </view>
+    <rich-text nodes="<br>" />
+    <image src="../../resorces/images/done.png" class="markers" style="top:8px;margin-right:20rpx ;" />
     <view> : 已经解锁的地点 </view>
   </view>
 </view>

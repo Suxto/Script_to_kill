@@ -1,7 +1,7 @@
 // pages/map/map.js
+var interval = null;
 var localData = require('../../resorces/texts/missions');
 Page({
-
   data: {
     roleNum: 0,
     roleName: null,
@@ -9,7 +9,14 @@ Page({
     list: null,
     missionShown: null,
     places: null,
-    quiz: false
+    quiz: false,
+    pop: -1,
+    code_isFocus: false,
+    code: [],
+    focus_status: [],
+    length: 0,
+    keyboardHeight: 0,
+    scrollPos: "tx"
   },
   onLoad() {
     var data = localData.missions[this.data.roleNum].missionList;
@@ -42,6 +49,21 @@ Page({
   closeQuiz() {
     this.setData({ quiz: false });
   },
+  pop(e) {
+    var that = this;
+    var num = e.currentTarget.dataset.index;
+    console.log(num);
+    that.setData({
+      pop: num,
+    })
+  }, closePop() {
+    this.setData({
+      pop: -1,
+      code: [],
+      code_isFocus: false,
+      length: 0
+    })
+  },
   removeMission(e) {
     var that = this;
     wx.showModal({
@@ -60,6 +82,81 @@ Page({
         }
       }
     })
+  },
+  //得到密码
+  get_code(e) {
+    var that = this;
+    that.setData({
+      code: e.detail.value
+    });
+    if (that.data.code.length == 0) {
+      that.setData({
+        focus_status: "1000"
+      });
+    }
+    if (that.data.code.length == 1) {
+      that.setData({
+        length: e.detail.value.length,
+        focus_status: "0100"
+      });
+    }
+    if (that.data.code.length == 2) {
+      that.setData({
+        length: e.detail.value.length,
+        focus_status: "0010"
+      });
+    }
+    if (that.data.code.length == 3) {
+      that.setData({
+        length: e.detail.value.length,
+        focus_status: "0001"
+      });
+    }
+    if (that.data.code.length == 4) {
+      that.setData({
+        length: e.detail.value.length
+      });
+      console.log(that.data.code);
+      that.setData({
+        keyboardHeight: 0,
+        scrollPos: "tx"
+      });
+      if (that.data.code == that.data.places[that.data.pop].passwd) {
+        wx.showToast({
+          title: '已完成当前任务点',
+          icon: 'succes',
+          duration: 1000,
+          mask: true
+        });
+        var str = "places[" + that.data.pop + "].status";
+        console.log("val " + that.data.places[that.data.pop].status);
+        that.setData({
+          [str]: true
+        });
+      } else {
+        wx.showToast({
+          title: '密码错误',
+          icon: 'error',
+          duration: 1000,
+          mask: true
+        });
+      }
+      this.closePop();
+    }
+  }, set_Focus() { //聚焦密码框
+    this.setData({
+      code_isFocus: true,
+      code: []
+    })
+  }, focu(e) {
+    var num = e.detail.height;
+    console.log(num);
+    this.setData({
+      keyboardHeight: num
+    });
+    this.setData({
+      scrollPos: "kb"
+    });
   }
 
 })

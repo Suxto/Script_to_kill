@@ -33,8 +33,8 @@ page {
 
 .map {
   position: absolute;
-  height: 800px;
-  width: 800px;
+  height: 1464rpx;
+  width: 1650rpx;
   display: block;
   z-index: 1;
 }
@@ -110,9 +110,9 @@ page {
 .quizBack {
   position: fixed;
   top: 115rpx;
-  left: 53rpx;
+  left: 50rpx;
   /* padding: 120rpx 70rpx; */
-  height: 1200rpx;
+  height: 1260rpx;
   width: 650rpx;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
@@ -134,6 +134,73 @@ page {
   left: 70rpx;
   font-size: x-large;
   width: 595rpx;
+  height: 1080rpx;
   padding: 10rpx 20rpx;
   line-height: 180%;
+  word-wrap: break-word;
+}
+
+
+/* 密码输入框样式 */
+.code .input-content-wrap .input-code-wrap {
+  display: flex;
+  align-items: center;
+  width: 600rpx;
+}
+
+.input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 700rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+.input {
+  height: 120rpx;
+  width: 70rpx;
+  flex: 1;
+  /* background-color: #fff; */
+  color: #262626;
+  font-size: 64rpx;
+  margin: 0 20rpx;
+  border: 5rpx #4287ff solid;
+  position: relative;
+}
+
+.input_none {
+  height: 120rpx;
+  width: 70rpx;
+  flex: 1;
+  /* background-color: #fff; */
+  color: #262626;
+  font-size: 64rpx;
+  margin: 0 20rpx;
+  border: 5rpx #dfdfdf solid;
+  position: relative;
+}
+
+.input text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.input_none text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
