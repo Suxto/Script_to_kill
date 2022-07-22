@@ -26,7 +26,7 @@ var pla = [
     x: "210px", y: "540px"
   }, {
     id: 2, status: true,
-    x: "190px", y: "380px"
+    x: "150px", y: "410px"
   }
 
 ];

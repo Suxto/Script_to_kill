@@ -41,6 +41,7 @@ page {
 
 .markers {
   position: relative;
+  float: left;
   height: 60rpx;
   width: 60rpx;
   z-index: 2;
@@ -54,6 +55,7 @@ page {
   float: right;
   margin-right: 30rpx;
   margin-top: 50rpx;
+  z-index: 11;
 }
 
 .listText {
@@ -83,4 +85,55 @@ page {
   position: fixed;
   transition: 0.3s;
   z-index: 3;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.quiz {
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 75rpx;
+  height: 75rpx;
+  z-index: 2;
+}
+
+.quizWindow {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.quizBack {
+  position: fixed;
+  top: 115rpx;
+  left: 53rpx;
+  /* padding: 120rpx 70rpx; */
+  height: 1200rpx;
+  width: 650rpx;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.quizTitle {
+  position: fixed;
+  top: 170rpx;
+  left: 70rpx;
+  text-align: center;
+  width: 610rpx;
+}
+
+.quizContent {
+  position: fixed;
+  top: 270rpx;
+  left: 70rpx;
+  font-size: x-large;
+  width: 595rpx;
+  padding: 10rpx 20rpx;
+  line-height: 180%;
 }

@@ -8,7 +8,8 @@ Page({
     wid: 0,
     list: null,
     missionShown: null,
-    places: null
+    places: null,
+    quiz: false
   },
   onLoad() {
     var data = localData.missions[this.data.roleNum].missionList;
@@ -28,14 +29,18 @@ Page({
   openList: function () {
     this.setData({
       wid: 700,
-      staus: "none"
     })
   },
   closeList: function () {
     this.setData({
       wid: 0,
-      staus: "block"
     })
+  },
+  openQuiz() {
+    this.setData({ quiz: true });
+  },
+  closeQuiz() {
+    this.setData({ quiz: false });
   },
   removeMission(e) {
     var that = this;
