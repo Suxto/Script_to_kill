@@ -18,9 +18,20 @@ var missi = [{
     status: "none"
   }]
 }, {
-
 }];
 
+var pla = [
+  {
+    id: 1, status: false,
+    x: "210px", y: "540px"
+  }, {
+    id: 2, status: true,
+    x: "190px", y: "380px"
+  }
+
+];
+
 module.exports = {
-  missions: missi
+  missions: missi,
+  places: pla
 }

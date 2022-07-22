@@ -7,20 +7,22 @@ Page({
     roleName: null,
     wid: 0,
     list: null,
-    missionShown: null
+    missionShown: null,
+    places: null
   },
   onLoad() {
     var data = localData.missions[this.data.roleNum].missionList;
     var rn = localData.missions[this.data.roleNum].roleName;
     var ms = localData.missions[this.data.roleNum].missionShown;
+    var pla = localData.places;
     if (data == undefined) this.setData({ list: [] })
     else this.setData({ list: data });
     this.setData({
       roleName: rn,
-      missionShown: ms
+      missionShown: ms,
+      places: pla
     })
-    // console.log(rn);
-    // console.log(this.data.missionShown);
+
   }
   ,
   openList: function () {

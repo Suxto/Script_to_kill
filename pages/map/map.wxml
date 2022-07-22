@@ -1,7 +1,6 @@
 <!--pages/map/map.wxml-->
 
-<button style="position: fixed; top:30px; left:20px;z-index: 1;display: {{staus}};" bindtap="openList">
-  任务列表</button>
+<image class="xButton" style="position: fixed; left:20px;z-index: 3;display: {{staus}};" src="../../resorces/images/list.png" bindtap="openList" />
 
 <image src="../../resorces/images/mb.png" style="width: {{wid}}rpx;" class="listBackground" />
 <scroll-view style="width: {{wid}}rpx;" class="sidenav" scroll-y>
@@ -19,9 +18,16 @@
 </scroll-view>
 
 <scroll-view class=" container1" scroll-x scroll-y show-scrollbar="false">
-  <view>
-    <image class="map" mode="aspectFill" src="../../resorces/images/map1.jpeg"></image>
+  <image class="map" mode="aspectFill" src="../../resorces/images/map1.jpeg"></image>
+
+  <view wx:for="{{places}}" wx:key="index">
+
+    <view data-index="{{index}}" class="markers" capture-bind:longpress="removeMission">
+      <image src="{{item.status?'../../resorces/images/done.png':'../../resorces/images/notdone.png'}}" class="markers" style="left:{{item.x}};top:{{item.y}}" />
+    </view>
+
   </view>
+
 </scroll-view>
 
 
