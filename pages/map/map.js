@@ -1,9 +1,10 @@
 // pages/map/map.js
 var interval = null;
+const app = getApp();
 var localData = require('../../resorces/texts/missions');
 Page({
   data: {
-    roleNum: 0,
+    roleNum: null,
     roleName: null,
     wid: 0,
     list: null,
@@ -18,17 +19,19 @@ Page({
     keyboardHeight: 0,
     scrollPos: "tx"
   },
-  onLoad() {
-    var data = localData.missions[this.data.roleNum].missionList;
-    var rn = localData.missions[this.data.roleNum].roleName;
-    var ms = localData.missions[this.data.roleNum].missionShown;
+  onLoad(options) {
+    var rNum = options.roleId;
+    // console.log(options);
+    var data = localData.missions[rNum].missionList;
+    var ms = localData.missions[rNum].missionShown;
     var pla = localData.places;
     if (data == undefined) this.setData({ list: [] })
     else this.setData({ list: data });
     this.setData({
-      roleName: rn,
+      roleName: options.roleName,
       missionShown: ms,
-      places: pla
+      places: pla,
+      roleNum: rNum
     })
 
   }

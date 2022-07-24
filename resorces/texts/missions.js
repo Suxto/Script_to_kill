@@ -1,5 +1,5 @@
 var missi = [{
-  roleName: "avava",
+  id: 0,
   missionShown: 3,
   missionList: [{
     text: "前往侍女馆找梁老师",
@@ -18,6 +18,24 @@ var missi = [{
     status: "none"
   }]
 }, {
+  id: 1,
+  missionShown: 3,
+  missionList: [{
+    text: "前往侍女馆找梁老师",
+    status: "block"
+  }, {
+    text: "接下梁老师手上的狗链",
+    status: "block"
+  }, {
+    text: "套上狗链，成为梁老师的狗",
+    status: "block"
+  }, {
+    text: "jogggjojo",
+    status: "block"
+  }, {
+    text: "jojogggdjo",
+    status: "none"
+  }]
 }];
 
 var pla = [

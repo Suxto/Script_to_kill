@@ -1,19 +1,41 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
+
+.back {
+  position: fixed;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.title {
+  position: relative;
+  padding-top: 100rpx;
+  text-align: center;
+  font-size: 95rpx;
+  z-index: 1;
 }
 
-.usermotto {
-  margin-top: 200px;
+.roleContainer {
+  height: 100%;
+  width: 100%;
+  padding: 30rpx 10rpx;
+  margin: 30rpx;
+}
+
+.roleItem {
+  float: left;
+  padding: 50rpx 50rpx;
+}
+
+.roleContainer image {
+  height: 230rpx;
+  width: 230rpx;
+  border-radius: 1.5rem;
+}
+
+.roleName {
+  padding: 10rpx 0;
+  text-align: center;
+  font-weight: bold;
 }
