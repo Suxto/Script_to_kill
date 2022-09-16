@@ -41,7 +41,7 @@
 
   <scroll-view class="quizContent" scroll-y scroll-into-view="{{scrollPos}}">
     <text id="tx">{{places[pop].text}}</text>
-    <view>在下面的框中输入密码:</view>
+    <!-- <view>在下面的框中输入NPC提供的密码:</view> -->
     <!-- 输入密码解锁地点 -->
     <view class="code">
       <view class="input-content-wrap">

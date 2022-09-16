@@ -22,7 +22,7 @@ page {
 .map {
   position: absolute;
   height: 1464rpx;
-  width: 1650rpx;
+  width: 2050rpx;
   display: block;
   z-index: 1;
 }
