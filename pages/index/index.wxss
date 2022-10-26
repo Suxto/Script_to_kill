@@ -1,41 +1,46 @@
 /**index.wxss**/
 
 .back {
-  position: fixed;
-  z-index: 0;
-  height: 100%;
-  width: 100%;
-  top: 0;
+    position: fixed;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
 }
 
 .title {
-  position: relative;
-  padding-top: 100rpx;
-  text-align: center;
-  font-size: 95rpx;
-  z-index: 1;
+    position: relative;
+    padding-top: 30rpx;
+    text-align: center;
+    font-size: 55rpx;
+    z-index: 1;
 }
 
+swiper {
+    height: 100%;
+}
+
+
 .roleContainer {
-  height: 100%;
-  width: 100%;
-  padding: 30rpx 10rpx;
-  margin: 30rpx;
+    position: relative;
+    left: 25rpx;
+    height: 1290rpx;
+    width: 700rpx;
+    z-index: 100;
 }
 
 .roleItem {
-  float: left;
-  padding: 50rpx 50rpx;
+    padding: 18rpx 0 0 0;
 }
 
 .roleContainer image {
-  height: 230rpx;
-  width: 230rpx;
-  border-radius: 1.5rem;
+    height: 1150rpx;
+    width: 700rpx;
+    border-radius: 1.5rem;
 }
 
 .roleName {
-  padding: 10rpx 0;
-  text-align: center;
-  font-weight: bold;
+    padding: 10rpx 0;
+    text-align: center;
+    font-weight: bold;
 }

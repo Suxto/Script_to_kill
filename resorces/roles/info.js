@@ -1,27 +1,21 @@
 var roles = [{
-  roleName: "guu",
+  roleName: "候渐成",
   id: 0
 }, {
-  roleName: "abab",
+  roleName: "徐子曦",
   id: 1
 }, {
-  roleName: "dfd",
+  roleName: "严钧儒",
   id: 2
 }, {
-  roleName: "fdf",
+  roleName: "陈景逾",
   id: 3
 }, {
-  roleName: "dfu",
+  roleName: "顾闻良",
   id: 4
 }, {
-  roleName: "ngu",
+  roleName: "方伯勋",
   id: 5
-}, {
-  roleName: "gbf",
-  id: 6
-}, {
-  roleName: "wou",
-  id: 7
 }];
 
 module.exports = {

@@ -20,7 +20,7 @@
 <!-- 地图&标记 -->
 <scroll-view class=" container1" scroll-x scroll-y bounces="false">
 
-  <image class="map" mode="aspectFill" src="../../resorces/images/map1.jpeg"></image>
+  <image class="map" mode="aspectFill" src="https://raw.githubusercontent.com/Suxto/script_to_kill_pic/master/resorces/images/map1.jpeg"></image>
 
   <view wx:for="{{places}}" wx:key="index">
 
