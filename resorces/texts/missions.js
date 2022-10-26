@@ -38,33 +38,67 @@ var missi = [{
   }]
 }];
 
-var pla = [
-  {
-    id: 1, status: false,
-    x: "140rpx", y: "1155rpx",
-    placeName: "西门",
-    text: "唐宝应元年，肃宗病重，皇后张氏妄图联合越王李系废黜太子，太子李豫在宦官李辅国、程元振的拥护下掌握先机，软禁叛臣，后肃宗崩逝，太子李豫即位，改年号为宝应，重用宦官李辅国，命其掌管御马监，存兵符，统摄宫中守卫。宝应二年，郭子仪等率众平息安史之乱，代宗采纳仆固怀恩分授原安史旧将镇守河朔的提议，是为藩镇割据之始。广德元年，大太监李辅国专横跋扈、骄奢淫逸，代宗和宰相元载设计处死李辅国，拿回被其控制的兵权。代宗提拔程元振统领禁军，代宗优宠宦官，宦官奉旨出使，代宗从不禁止其所求取，以致一时间北司各监太监“公求赂遗，无所忌惮”古人云“楚王好细腰，宫女多饿死。”皇上优宠宦臣的风气传到民间，一时间不少穷苦百姓选择将自家孩子送入宫，多换取些银钱，广德到大历年间，北司风光无两，疯狂圈占银钱与土地，有权势的宦官的私产竟是朝官的数倍......\n 请向NPC寻求更多线索，并在下面的框中输入NPC提供的密码:",
-    passwd: 1234
-  }, {
-    id: 2, status: false,
-    x: "100rpx", y: "790rpx",
-    placeName: "凤鸣学堂",
-    text: "ababab",
-    passwd: 1234
-  }, {
-    id: 3, status: false,
-    x: "75rpx", y: "490rpx",
-    placeName: "陆羽茶舍",
-    text: "ababab",
-    passwd: 1234
-  }, {
-    id: 4, status: false,
-    x: "460rpx", y: "190rpx",
-    placeName: "竹里馆",
-    text: "ababab",
-    passwd: 1234
-  }
-];
+var pla = [{
+  //0
+  status: false,
+  show: true,
+  x: "735rpx",
+  y: "255rpx",
+  placeName: "北平",
+  next: -1,
+  text: "<div><p><span>“九一八”事变后，辽旷的东北平原的宁静被枪炮声打破，日本铁蹄践踏之处，哀哭遍地，国土倾覆，丧权辱国。</span></p><p><span>	</span><span>与全国人民一致要求抗日的愿望相反，国民党政府置中华民族的尊严与利益于不顾，一方面不断与日寇签订丧权辱国的条约、协定，另一方面对共产党、红军和人民实行军事“围剿”和文化“围剿”，镇压人民的抗日活动。</span> <span> 在国民党蒋介石“ 攘外必先安内”、 对日本侵略者采取“ 绝对不抵抗” 的政策下， 仅用两三个月， 日军便占领了东北三省。 </span></p> <p> <span> </span><span>而日寇的魔爪怎可能就此止步于此，将整个中国变为它的殖民地才是它的狼子野心。</span > </p><p><span>	</span> <span> 东北沦陷之后， 仅一年半之间， 华北又复门户洞开。 < /span></p> <p> <span> </span><span>形势危急，直逼华北。</span > </p><p><span>   北平，这座古都，斜阳残照的城门有日军岗哨，大街小巷兽蹄所踏之处鸡犬不宁。日军经常在郊区夜以继日地进行大规模的军事演习，人民的生命及财产毫无保障，农田民舍多被焚毁。</span> </p><p><span>   京城内外谣诼纷纭，人们不知何时大难临头，皆是人心惶惶风声鹤唳。</span> </p></div > </div>",
+  passwd: 1234
+}, {
+  //1
+  status: false,
+  show: true,
+  x: "206rpx",
+  y: "696rpx",
+  next: 2,
+  placeName: "西安",
+  text: "<h5>1. 1965年 重聚</h5>",
+  passwd: 1234
+}, {
+  //2
+  status: false,
+  show: false,
+  x: "206rpx",
+  y: "696rpx",
+  next: 3,
+  placeName: "西安",
+  text: "<h5>2. 1935年 西安临大</h5>",
+  passwd: 1234
+}, {
+  //3
+  status: false,
+  show: false,
+  x: "206rpx",
+  y: "696rpx",
+  next: -1,
+  placeName: "西安",
+  text: "<h5>3. 1965年 现世安好</h5>",
+  passwd: 1234
+}, {
+  //4
+  status: false,
+  show: true,
+  x: "-125rpx",
+  y: "695rpx",
+  next: -1,
+  placeName: "宝鸡",
+  text: "ababab",
+  passwd: 1234
+}, {
+  //5
+  status: false,
+  show: true,
+  x: "-95rpx",
+  y: "875rpx",
+  next: -1,
+  placeName: "城固",
+  text: "ababab",
+  passwd: 1234
+}];
 
 module.exports = {
   missions: missi,

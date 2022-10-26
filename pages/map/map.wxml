@@ -18,13 +18,12 @@
 </scroll-view>
 
 <!-- 地图&标记 -->
-<scroll-view class=" container1" scroll-x scroll-y bounces="false">
+<scroll-view class="container1" scroll-x scroll-y bounces="false">
 
   <image class="map" mode="aspectFill" src="https://raw.githubusercontent.com/Suxto/script_to_kill_pic/master/resorces/images/map1.jpeg"></image>
 
   <view wx:for="{{places}}" wx:key="index">
-
-    <view data-index="{{index}}" class="markers" bindtap="{{item.status?'':'pop'}}">
+    <view wx:if="{{item.show}}" data-index="{{index}}" class="markers" bindtap="{{item.status?'':'pop'}}">
       <image src="{{item.status?'../../resorces/images/done.png':'../../resorces/images/notdone.png'}}" class="markers" style="left:{{item.x}};top:{{item.y}}" />
     </view>
 
@@ -40,7 +39,8 @@
   <rich-text class="quizTitle" nodes="<h1>{{places[pop].placeName}}</h1><br>"></rich-text>
 
   <scroll-view class="quizContent" scroll-y scroll-into-view="{{scrollPos}}">
-    <text id="tx">{{places[pop].text}}</text>
+    <!-- <text id="tx">{{places[pop].text}}</text> -->
+    <rich-text nodes="{{places[pop].text}}" />
     <!-- <view>在下面的框中输入NPC提供的密码:</view> -->
     <!-- 输入密码解锁地点 -->
     <view class="code">

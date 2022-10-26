@@ -4,7 +4,7 @@ const app = getApp();
 var localData = require('../../resorces/texts/missions');
 Page({
   data: {
-    roleNum: null,
+    roleNum: 0,
     roleName: null,
     wid: 0,
     list: null,
@@ -20,22 +20,27 @@ Page({
     scrollPos: "tx"
   },
   onLoad(options) {
-    var rNum = options.roleId;
+    // var rNum = options.roleId;
+    var rNum = 0;
     // console.log(options);
     var data = localData.missions[rNum].missionList;
     var ms = localData.missions[rNum].missionShown;
     var pla = localData.places;
-    if (data == undefined) this.setData({ list: [] })
-    else this.setData({ list: data });
+    if (data == undefined) this.setData({
+      list: []
+    })
+    else this.setData({
+      list: data
+    });
     this.setData({
-      roleName: options.roleName,
+      // roleName: options.roleName,
       missionShown: ms,
       places: pla,
-      roleNum: rNum
+      roleNum: rNum,
+      pop: -1
     })
 
-  }
-  ,
+  },
   openList: function () {
     this.setData({
       wid: 700,
@@ -47,19 +52,25 @@ Page({
     })
   },
   openQuiz() {
-    this.setData({ quiz: true });
+    this.setData({
+      quiz: true
+    });
   },
   closeQuiz() {
-    this.setData({ quiz: false });
+    this.setData({
+      quiz: false
+    });
   },
   pop(e) {
     var that = this;
     var num = e.currentTarget.dataset.index;
     console.log(num);
+    // console.log(e);
     that.setData({
       pop: num,
     })
-  }, closePop() {
+  },
+  closePop() {
     this.setData({
       pop: -1,
       code: [],
@@ -131,11 +142,23 @@ Page({
           duration: 1000,
           mask: true
         });
-        var str = "places[" + that.data.pop + "].status";
-        console.log("val " + that.data.places[that.data.pop].status);
-        that.setData({
-          [str]: true
-        });
+        var nxt = that.data.places[that.data.pop].next;
+        if (nxt == -1) {
+          var str = "places[" + that.data.pop + "].status";
+          // console.log("val " + that.data.places[that.data.pop].status);
+          that.setData({
+            [str]: true
+          });
+        } else {
+          var now = "places[" + that.data.pop + "].show";
+          var next = "places[" + nxt + "].show";
+          console.log("val " + that.data.places[that.data.pop].status);
+          that.setData({
+            [now]: false,
+            [next]: true
+          });
+        }
+
       } else {
         wx.showToast({
           title: '密码错误',
@@ -146,12 +169,14 @@ Page({
       }
       this.closePop();
     }
-  }, set_Focus() { //聚焦密码框
+  },
+  set_Focus() { //聚焦密码框
     this.setData({
       code_isFocus: true,
       code: []
     })
-  }, focu(e) {
+  },
+  focu(e) {
     var num = e.detail.height;
     console.log(num);
     this.setData({
@@ -163,5 +188,3 @@ Page({
   }
 
 })
-
-
