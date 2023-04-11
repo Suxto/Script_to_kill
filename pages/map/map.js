@@ -20,7 +20,7 @@ Page({
     scrollPos: "tx"
   },
   onLoad(options) {
-    // var rNum = options.roleId;
+    var rNum = options.roleId; //debug
     var rNum = 0;
     // console.log(options);
     var data = localData.missions[rNum].missionList;
@@ -33,7 +33,7 @@ Page({
       list: data
     });
     this.setData({
-      // roleName: options.roleName,
+      roleName: options.roleName, //debug
       missionShown: ms,
       places: pla,
       roleNum: rNum,

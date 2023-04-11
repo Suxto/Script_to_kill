@@ -61,8 +61,10 @@
         </view>
       </view>
       <input bindinput="get_code" class="input-content" type="number" focus="{{code_isFocus}}" bindfocus="focu" maxlength="4" />
+
     </view>
-    <view id="kb" style="height: {{keyboardHeight}}px;"></view>
+    <!-- <view id="kb" style="height: {{keyboardHeight}}px;"></view> -->
+    <view id="kb" style="height: 300px;"></view>
   </scroll-view>
 
 </view>
