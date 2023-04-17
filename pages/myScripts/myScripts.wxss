@@ -1,0 +1,18 @@
+/* pages/myScripts.wxss */
+.title {
+  position: relative;
+  top: 20rpx;
+  left: 285rpx;
+  text-align: center;
+  font-size: 45rpx;
+  z-index: 1;
+}
+
+.BTCreate {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  /* width: 50rpx; */
+  padding: 10rpx;
+  /* margin: ; */
+}

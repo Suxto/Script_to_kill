@@ -1,52 +1,37 @@
-// pages/index/index.js
+// pages/myScripts.js
 Page({
-
 	/**
 	 * Page initial data
 	 */
 	data: {
-		id: null
+		id: null,
+		scripts: []
 	},
-	goPlay(e) {
-		wx.navigateTo({
-			url: '/pages/scriptSel/scriptSel',
-			// url: '/pages/map/map'
-		})
-	},
-	goCreate(e) {
-		wx.navigateTo({
-			url: '/pages/myScripts/myScripts?id=' + this.data.id,
-		});
 
-	},
 	/**
 	 * Lifecycle function--Called when page load
 	 */
 	onLoad(options) {
-		var that = this;
-		wx.login({
+		this.setData({
+			id: options.id
+		});
+		// console.log(this.data.id)
+		wx.request({
+			url: 'http://localhost:8080/scriptServer/getAuthorScripts.do',
+			data: { //传递给后台的数据
+				author: this.data.id,
+			},
+			method: 'get',
+			header: {
+				'content-type': 'application/json' //默认值
+			},
 			success(res) {
-				wx.request({
-					url: 'http://localhost:8080/scriptServer/getId.do',
-					data: { //传递给后台的数据
-						code: res.code,
-					},
-					method: 'get',
-					header: {
-						'content-type': 'application/json' //默认值
-					},
-					success(rres) {
-						that.setData({
-							id: rres.data
-						})
-						console.log(rres.data)
-					},
-					fail(res) {
-						console.log('failed')
-					}
-				})
+				console.log(res.data)
+			},
+			fail(res) {
+				console.log(res)
 			}
-		})
+		});
 	},
 
 	/**

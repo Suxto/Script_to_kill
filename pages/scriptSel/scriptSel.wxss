@@ -1,0 +1,9 @@
+/* pages/scriptSel/scriptSel.wxss */
+.title {
+  position: relative;
+  top: 20rpx;
+  left: 285rpx;
+  text-align: center;
+  font-size: 45rpx;
+  z-index: 1;
+}

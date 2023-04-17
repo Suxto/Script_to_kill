@@ -1,0 +1,9 @@
+<!--pages/myScripts.wxml-->
+<text class="title">我的剧本</text>
+<button class="BTCreate" style="width: 20vw;">新建</button>
+<view style="position: absolute; width: 750rpx; background: #d3d3d3; height: 100rpx;left: 0rpx; top: 0rpx;z-index: -1;"></view>
+<scroll-view>
+  <ul>
+    
+  </ul>
+</scroll-view>

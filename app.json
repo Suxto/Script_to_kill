@@ -2,7 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/map/map",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/roleSel/roleSel",
+    "pages/scriptSel/scriptSel",
+    "pages/myScripts/myScripts",
+    "pages/crtMap/crtMap"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +16,5 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading":"requiredComponents"
+  "lazyCodeLoading": "requiredComponents"
 }

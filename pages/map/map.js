@@ -5,7 +5,7 @@ var localData = require('../../resorces/texts/missions');
 Page({
   data: {
     roleNum: 0,
-    roleName: null,
+    roleName: 'roleName',
     wid: 0,
     list: null,
     missionShown: null,
@@ -21,10 +21,11 @@ Page({
   },
   onLoad(options) {
     var rNum = options.roleId; //debug
-    var rNum = 0;
+    // var rNum = 0;
     // console.log(options);
     var data = localData.missions[rNum].missionList;
     var ms = localData.missions[rNum].missionShown;
+    // console.log(JSON.stringify(data));
     var pla = localData.places;
     if (data == undefined) this.setData({
       list: []

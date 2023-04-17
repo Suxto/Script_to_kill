@@ -1,0 +1,5 @@
+<!--pages/scriptSel/scriptSel.wxml-->
+<text class="title">剧本选择</text>
+<view style="position: absolute; width: 750rpx; background: #d3d3d3; height: 100rpx;left: 0rpx; top: 0rpx;z-index: -1;"></view>
+<ul>
+</ul>

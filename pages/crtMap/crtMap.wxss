@@ -1,0 +1,208 @@
+/* pages/map/map.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.container1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.listButton {
+  position: fixed;
+  height: 65rpx;
+  width: 65rpx;
+  padding: 40rpx;
+  z-index: 3;
+}
+
+.map {
+  position: absolute;
+  height: 1450rpx;
+  width: 820rpx;
+  display: block;
+  z-index: 1;
+}
+
+.markers {
+  position: relative;
+  float: left;
+  height: 60rpx;
+  width: 60rpx;
+  z-index: 2;
+}
+
+
+.xButton {
+  width: 55rpx;
+  height: 55rpx;
+  position: relative;
+  float: right;
+  /* margin-right: 30rpx; */
+  /* margin-top: 50rpx; */
+  padding: 40rpx;
+  z-index: 11;
+}
+
+
+.listTitle {
+  position: relative;
+  font-size: 80rpx;
+  font-weight: bold;
+  padding-left: 160rpx;
+  padding-top: 120rpx;
+  padding-bottom: 60rpx;
+}
+
+.listText {
+  /* padding: 20rpx; */
+  color: rgb(24, 24, 24);
+  font-size: xx-large;
+  line-height: 100rpx;
+  z-index: 3;
+  /* padding: 10rpx; */
+  margin: 0 30rpx;
+  word-wrap: break-word;
+  border-bottom: 5rpx rgba(0, 0, 0, 0.2) solid;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.listBackground {
+  height: 100%;
+  position: fixed;
+  transition: 0.3s;
+  z-index: 3;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.quiz {
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 75rpx;
+  height: 75rpx;
+  z-index: 2;
+}
+
+.quizWindow {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  transition: 0.3s;
+}
+
+.quizBack {
+  position: fixed;
+  top: 115rpx;
+  left: 50rpx;
+  /* padding: 120rpx 70rpx; */
+  height: 1260rpx;
+  width: 650rpx;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.quizTitle {
+  position: fixed;
+  top: 170rpx;
+  left: 70rpx;
+  text-align: center;
+  width: 610rpx;
+}
+
+.quizContent {
+  position: fixed;
+  top: 270rpx;
+  left: 70rpx;
+  font-size: x-large;
+  width: 595rpx;
+  height: 1080rpx;
+  padding: 10rpx 20rpx;
+  line-height: 180%;
+  word-wrap: break-word;
+}
+
+
+/* 密码输入框样式 */
+.code .input-content-wrap .input-code-wrap {
+  display: flex;
+  align-items: center;
+  width: 600rpx;
+}
+
+.input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 700rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+.input {
+  height: 120rpx;
+  width: 70rpx;
+  flex: 1;
+  /* background-color: #fff; */
+  color: #262626;
+  font-size: 64rpx;
+  margin: 0 20rpx;
+  border: 5rpx #4287ff solid;
+  position: relative;
+}
+
+.input_none {
+  height: 120rpx;
+  width: 70rpx;
+  flex: 1;
+  /* background-color: #fff; */
+  color: #262626;
+  font-size: 64rpx;
+  margin: 0 20rpx;
+  border: 5rpx #dfdfdf solid;
+  position: relative;
+}
+
+.input text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.input_none text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,13 +1,5 @@
-<!--index.wxml-->
-<view class="title">选择你的角色</view>
-<image src="../../resorces/images/rb.png" class="back" />
-
-<view class="roleContainer">
-  <swiper indicator-dots>
-    <swiper-item wx:for="{{roles}}" wx:key="index" class="roleItem">
-      <image src="https://raw.githubusercontent.com/Suxto/script_to_kill_pic/master/resorces/roles/image/{{item.id}}.jpg" data-index="{{item.id}}" bindtap="gotoMap" />
-      <view class="roleName">角色名称：{{item.roleName}}</view>
-    </swiper-item>
-
-  </swiper>
-</view>
+<view class="title">剧说风华</view>
+<ul style="padding: 100rpx;">
+  <button class="button" bindtap="goPlay"> 游玩</button>
+  <button class="button" bindtap="goCreate">创作</button>
+</ul>
