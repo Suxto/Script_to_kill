@@ -1,5 +1,18 @@
 <!--pages/scriptSel/scriptSel.wxml-->
 <text class="title">剧本选择</text>
 <view style="position: absolute; width: 750rpx; background: #d3d3d3; height: 100rpx;left: 0rpx; top: 0rpx;z-index: -1;"></view>
-<ul>
-</ul>
+<view class='search'>
+  <input type='text' placeholder='🔎搜索剧本' placeholder-class="text" confirm-type='search' bindinput='query'></input>
+</view>
+<view class="list" wx:for="{{scripts}}" wx:key="index">
+  <view data-index="{{index}}" bindtap="go">
+    <!-- <text class="rank"></text> -->
+    <view class="listTitle">{{index + 1}}. {{item.title}}</view>
+    <view class="starArray" wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="i">
+      <view wx:if="{{i <= item.rate}}">
+        <image src="/resorces/images/star.png" class="star" />
+      </view>
+    </view>
+
+  </view>
+</view>

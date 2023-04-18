@@ -16,3 +16,45 @@
   padding: 10rpx;
   /* margin: ; */
 }
+
+.list {
+  position: relative;
+  top: 40rpx;
+  padding: 25rpx 10rpx 25rpx 20rpx;
+  /* color: rgb(24, 24, 24); */
+  /* font-size: xx-large; */
+  /* line-height: 150rpx; */
+  z-index: 3;
+  /* padding: 10rpx; */
+  /* margin: 0 30rpx; */
+  word-wrap: normal;
+  border-bottom: 5rpx rgba(0, 0, 0, 0.2) solid;
+}
+
+.listTitle {
+  /* padding: 0 20rpx; */
+  width: 600rpx;
+  color: rgb(24, 24, 24);
+  font-size: x-large;
+  /* line-height: 150rpx; */
+  z-index: 3;
+  /* padding: 10rpx; */
+  /* margin: 0 30rpx; */
+  word-wrap: break-word;
+}
+
+.star {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  float: right;
+  /* margin-right: 30rpx; */
+  /* margin-top: 50rpx; */
+  padding: 2 rpx;
+  z-index: 11;
+}
+
+.starArray {
+  position: relative;
+  top: -30rpx;
+}

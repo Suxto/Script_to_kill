@@ -1,3 +1,5 @@
+const app = getApp();
+const host = app.globalData.host;
 // pages/index/index.js
 Page({
 
@@ -27,7 +29,7 @@ Page({
 		wx.login({
 			success(res) {
 				wx.request({
-					url: 'http://localhost:8080/scriptServer/getId.do',
+					url: host + '/getId.do',
 					data: { //传递给后台的数据
 						code: res.code,
 					},

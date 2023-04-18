@@ -1,43 +1,18 @@
-// pages/myScripts.js
-const app = getApp();
-const host = app.globalData.host;
+// roleSel/roleSel/roleSel.js
 Page({
+
   /**
    * Page initial data
    */
   data: {
-    id: null,
-    scripts: []
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    this.setData({
-      id: options.id
-    });
-    // console.log(this.data.id)
-    var that = this;
-    wx.request({
-      url: host + '/getAuthorScripts.do',
-      data: { //传递给后台的数据
-        author: this.data.id,
-      },
-      method: 'get',
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success(res) {
-        // console.log(res.data);
-        that.setData({
-          scripts: res.data
-        })
-      },
-      fail(res) {
-        console.log(res)
-      }
-    });
+
   },
 
   /**

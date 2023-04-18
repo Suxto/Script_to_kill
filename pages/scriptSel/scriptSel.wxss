@@ -1,4 +1,4 @@
-/* pages/scriptSel/scriptSel.wxss */
+/* pages/myScripts.wxss */
 .title {
   position: relative;
   top: 20rpx;
@@ -6,4 +6,70 @@
   text-align: center;
   font-size: 45rpx;
   z-index: 1;
+}
+
+.BTCreate {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  /* width: 50rpx; */
+  padding: 10rpx;
+  /* margin: ; */
+}
+
+.list {
+  position: relative;
+  top: 40rpx;
+  padding: 25rpx 10rpx 25rpx 20rpx;
+  /* color: rgb(24, 24, 24); */
+  /* font-size: xx-large; */
+  /* line-height: 150rpx; */
+  z-index: 3;
+  /* padding: 10rpx; */
+  /* margin: 0 30rpx; */
+  word-wrap: normal;
+  border-radius: 8px;
+  border-bottom: 5rpx rgba(0, 0, 0, 0.2) solid;
+}
+
+.listTitle {
+  /* padding: 0 20rpx; */
+  width: 600rpx;
+  color: rgb(24, 24, 24);
+  font-size: x-large;
+  /* line-height: 150rpx; */
+  z-index: 3;
+  /* padding: 10rpx; */
+  /* margin: 0 30rpx; */
+  word-wrap: break-word;
+}
+
+.star {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  float: right;
+  /* margin-right: 30rpx; */
+  /* margin-top: 50rpx; */
+  padding: 2 rpx;
+  z-index: 11;
+}
+
+.starArray {
+  position: relative;
+  top: -30rpx;
+}
+
+.search {
+  position: relative;
+  top: 45rpx;
+  padding: 10rpx;
+  border: 10rpx black;
+  margin: 5rpx;
+  border-radius: 10px;
+  border: 1rpx rgba(0, 0, 0, 0.3) solid;
+}
+
+.text {
+  text-align: center;
 }

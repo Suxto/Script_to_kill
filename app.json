@@ -5,8 +5,9 @@
     "pages/logs/logs",
     "pages/roleSel/roleSel",
     "pages/scriptSel/scriptSel",
+    "pages/scriptEdit/scriptEdit",
     "pages/myScripts/myScripts",
-    "pages/crtMap/crtMap"
+    "pages/mapEdit/mapEdit"
   ],
   "window": {
     "backgroundTextStyle": "light",
