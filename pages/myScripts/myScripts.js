@@ -9,7 +9,41 @@ Page({
     id: null,
     scripts: []
   },
+  query(e) {
+    var that = this;
+    var str = e.detail.value;
 
+    wx.request({
+      url: host + '/getAuthorScripts.do',
+      method: 'get',
+      data: {
+        title: str,
+        author: this.data.id
+      },
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success(res) {
+        // console.log(str);
+        // var list = JSON.parse(res.data);
+        // console.log(res.data);
+        that.setData({
+          scripts: res.data
+        })
+      },
+      fail(res) {
+        console.log(res)
+      }
+    });
+  },
+  go(e) {
+    // console.log(e.currentTarget.dataset.index);
+    var idx = e.currentTarget.dataset.index;
+    var id = this.data.scripts[idx].id;
+    wx.navigateTo({
+      url: '/pages/roleEdit/roleEdit?id=' + id,
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
@@ -21,7 +55,7 @@ Page({
     var that = this;
     wx.request({
       url: host + '/getAuthorScripts.do',
-      data: { //传递给后台的数据
+      data: {
         author: this.data.id,
       },
       method: 'get',

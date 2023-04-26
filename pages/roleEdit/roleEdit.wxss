@@ -1,1 +1,69 @@
-/* roleSel/roleSel/roleSel.wxss */
+/**index.wxss**/
+
+.back {
+  position: fixed;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.title {
+  position: relative;
+  padding-top: 30rpx;
+  text-align: center;
+  font-size: 55rpx;
+  z-index: 1;
+}
+
+swiper {
+  height: 100%;
+}
+
+
+.roleContainer {
+  position: relative;
+  left: 25rpx;
+  height: 1290rpx;
+  width: 700rpx;
+  z-index: 100;
+}
+
+.roleItem {
+  padding: 18rpx 0 0 0;
+}
+
+.roleimg {
+  height: 1150rpx;
+  width: 700rpx;
+  border-radius: 1.5rem;
+}
+
+.roleName {
+  padding: 10rpx 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add {
+  position: relative;
+  /* top: 0rpx; */
+  padding: 200rpx 50rpx 250rpx 50rpx;
+  height: 600rpx;
+  width: 600rpx;
+  z-index: 2;
+}
+
+.imgBox {
+  font-size: 28rpx;
+  margin: 3%;
+  background: white;
+  padding: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.imgContant {
+  margin-left: -100rpx;
+}

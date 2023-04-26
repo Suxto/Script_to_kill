@@ -1,6 +1,8 @@
 <!--pages/map/map.wxml-->
 <!-- 任务列表 -->
 <image class="listButton" src="../../resorces/images/list.png" bindtap="openList" />
+<button class="BTCreate" style="width: 40vw;"> 保存</button>
+<button class="BTBG" style="width: 40vw;"> 上传地图</button>
 <view class="quizWindow" wx:if="{{wid}}"></view>
 <image src="../../resorces/images/mb.png" style="width: {{wid}}rpx;" class="listBackground" />
 <scroll-view style="width: {{wid}}rpx;" class="sidenav" scroll-y>
@@ -37,40 +39,75 @@
   <image src="../../resorces/images/quizBack.jpg" class="quizBack" />
   <!-- 弹窗内容 -->
   <rich-text class="quizTitle" nodes="<h1>{{places[pop].placeName}}</h1><br>"></rich-text>
+  <!-- editor -->
 
-  <scroll-view class="quizContent" scroll-y scroll-into-view="{{scrollPos}}">
-    <!-- <text id="tx">{{places[pop].text}}</text> -->
-    <rich-text nodes="{{places[pop].text}}" />
-    <!-- <view>在下面的框中输入NPC提供的密码:</view> -->
-    <!-- 输入密码解锁地点 -->
-    <view class="code">
-      <view class="input-content-wrap">
-        <view catchtap="set_Focus" class="input-code-wrap">
-          <view class="{{code_isFocus&&length==0?'input':'input_none'}}">
-            <text>{{code[0]}}</text>
-          </view>
-          <view class="{{length==2?'input':'input_none'}}">
-            <text>{{code[1]}}</text>
-          </view>
-          <view class="{{length==3?'input':'input_none'}}">
-            <text>{{code[2]}}</text>
-          </view>
-          <view class="{{length==4?'input':'input_none'}}">
-            <text>{{code[3]}}</text>
+  <view>
+    <!-- 文章类型 -->
+    <view>
+      <!-- <picker bindchange="bindPickerChange" model:value="{{index}}" range="{{array}}">
+        <view class="picker">文章类型：{{objectArray[index].name}}</view>
+      </picker> -->
+    </view><!-- 文章标题 -->
+    <!-- <view><input name="title" class="title" placeholder="请输入文章标题" maxlength="18" model:value="{{title}}"></input></view>编辑区 -->
+    <view class="container">
+      <view class="page-body">
+        <view class='wrapper'>
+          <!-- 操作栏 -->
+          <view class='toolbar' bindtap="format">
+            <!-- <i class="iconfont icon-zitijiacu"></i>
+            <i class="iconfont icon-zitixieti"></i>
+            <i class="iconfont icon-zitixiahuaxian"></i>
+            <i class="iconfont icon-zuoduiqi"></i>
+            <i class="iconfont icon-juzhongduiqi"></i>
+            <i class="iconfont icon-youduiqi"></i>
+            <i class="iconfont icon-undo"></i>
+            <i class="iconfont icon-redo"></i>
+            <i class="iconfont icon-charutupian"></i>
+            <i class="iconfont icon-shanchu"></i>
+          </view>文章内容区，富文本编辑器 -->
+            <editor id="editor" class="ql-container" placeholder="{{places[pop].text}}" showImgSize showImgToolbar showImgResize></editor>
+            <!-- 发布按钮 -->
+            <!-- <view class="button" bindtap="formSubmit">发布</view> -->
           </view>
         </view>
       </view>
-      <input bindinput="get_code" class="input-content" type="number" focus="{{code_isFocus}}" bindfocus="focu" maxlength="4" />
-
     </view>
-    <!-- <view id="kb" style="height: {{keyboardHeight}}px;"></view> -->
-    <view id="kb" style="height: 300px;"></view>
-  </scroll-view>
 
+    <!-- editor -->
+    <scroll-view class="quizContent" scroll-y scroll-into-view="{{scrollPos}}">
+      <!-- <text id="tx">{{places[pop].text}}</text> -->
+      <!-- <rich-text nodes="{{places[pop].text}}" />显示文本 -->
+      <!-- <view>在下面的框中输入NPC提供的密码:</view> -->
+      <!-- 输入密码解锁地点 -->
+      <view class="code">
+        <view class="input-content-wrap">
+          <view catchtap="set_Focus" class="input-code-wrap">
+            <view class="{{code_isFocus&&length==0?'input':'input_none'}}">
+              <text>{{code[0]}}</text>
+            </view>
+            <view class="{{length==2?'input':'input_none'}}">
+              <text>{{code[1]}}</text>
+            </view>
+            <view class="{{length==3?'input':'input_none'}}">
+              <text>{{code[2]}}</text>
+            </view>
+            <view class="{{length==4?'input':'input_none'}}">
+              <text>{{code[3]}}</text>
+            </view>
+          </view>
+        </view>
+        <input bindinput="get_code" class="input-content" type="number" focus="{{code_isFocus}}" bindfocus="focu" maxlength="4" />
+
+      </view>
+      <!-- <view id="kb" style="height: {{keyboardHeight}}px;"></view> -->
+      <view id="kb" style="height: 300px;"></view>
+    </scroll-view>
+
+  </view>
 </view>
 
 <!-- 帮助图标&弹窗 -->
-<image src="../../resorces/images/quiz.png" class="quiz" bindtap="openQuiz" />
+<!-- <image src="../../resorces/images/quiz.png" class="quiz" bindtap="openQuiz" /> -->
 
 <view class="quizWindow" wx:if="{{quiz}}">
   <image src="../../resorces/images/X.png" class="xButton" bindtap="closeQuiz" style="top:95rpx;left:-66rpx;" />
@@ -88,3 +125,5 @@
     <view> : 已经解锁的地点 </view>
   </view>
 </view>
+
+<view></view>

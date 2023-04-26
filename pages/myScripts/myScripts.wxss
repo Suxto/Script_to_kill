@@ -28,6 +28,7 @@
   /* padding: 10rpx; */
   /* margin: 0 30rpx; */
   word-wrap: normal;
+  border-radius: 8px;
   border-bottom: 5rpx rgba(0, 0, 0, 0.2) solid;
 }
 
@@ -57,4 +58,18 @@
 .starArray {
   position: relative;
   top: -30rpx;
+}
+
+.search {
+  position: relative;
+  top: 45rpx;
+  padding: 10rpx;
+  border: 10rpx black;
+  margin: 5rpx;
+  border-radius: 10px;
+  border: 1rpx rgba(0, 0, 0, 0.3) solid;
+}
+
+.text {
+  text-align: center;
 }

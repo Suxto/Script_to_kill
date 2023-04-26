@@ -1,2 +1,16 @@
-<!--roleSel/roleSel/roleSel.wxml-->
-<text>roleSel/roleSel/roleSel.wxml</text>
+<!--index.wxml-->
+<view class="title">编辑你的角色</view>
+<image src="../../resorces/images/rb.png" class="back" />
+
+<view class="roleContainer">
+  <swiper indicator-dots>
+    <swiper-item wx:for="{{roles}}" wx:key="index" class="roleItem">
+      <image src="{{imghost}}roles/{{scrpitId}}/{{item.id}}.jpg" data-index="{{item.id}}" bindtap="gotoMap" class="roleimg" />
+      <view class="roleName">角色名称：{{item.roleName}}</view>
+    </swiper-item>
+    <swiper-item class="roleItem">
+      <image src=" /resorces/images/add.png" class="add" bindtap="addRole" />
+      <view class="roleName">点击加号添加角色</view>
+    </swiper-item>
+  </swiper>
+</view>

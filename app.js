@@ -15,6 +15,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: 'http://localhost:8080/scriptServer'
+    // host: 'http://localhost:8080/scriptServer',
+    host: 'http://47.120.6.121:8080/scriptServer-1.1-SNAPSHOT',
+    imghost: 'http://47.120.6.121/scripts/'
+    // imghost: 'https://raw.githubusercontent.com/Suxto/script_to_kill_pic/master/resorces/roles/image/'
   }
 })

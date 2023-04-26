@@ -4,6 +4,7 @@
     "pages/map/map",
     "pages/logs/logs",
     "pages/roleSel/roleSel",
+    "pages/roleEdit/roleEdit",
     "pages/scriptSel/scriptSel",
     "pages/scriptEdit/scriptEdit",
     "pages/myScripts/myScripts",
